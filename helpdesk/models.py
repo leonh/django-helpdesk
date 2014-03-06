@@ -380,7 +380,7 @@ class Ticket(models.Model):
         A HTML <span> providing a CSS_styled representation of the priority.
         """
         from django.utils.safestring import mark_safe
-        return mark_safe(u"<span class='priority%s'>%s</span>" % (self.priority, self.priority))
+        return mark_safe(u"<span class='label priority%s'>%s</span>" % (self.priority, self.priority))
     get_priority_span = property(_get_priority_span)
 
     def _get_status(self):
@@ -1131,8 +1131,8 @@ class TicketCC(models.Model):
         return u'%s for %s' % (self.display, self.ticket.title)
 
 class CustomFieldManager(models.Manager):
-    def get_query_set(self):
-        return super(CustomFieldManager, self).get_query_set().order_by('ordering')
+    def get_queryset(self):
+        return super(CustomFieldManager, self).get_queryset().order_by('ordering')
 
 
 class CustomField(models.Model):

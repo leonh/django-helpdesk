@@ -137,7 +137,7 @@ HELPDESK_DASHBOARD_HIDE_EMPTY_QUEUES = getattr(settings, 'HELPDESK_DASHBOARD_HID
 # show basic ticket stats on dashboard?
 HELPDESK_DASHBOARD_BASIC_TICKET_STATS = getattr(settings, 'HELPDESK_DASHBOARD_BASIC_TICKET_STATS', False)
 
-
+HELPDESK_DASHBOARD_SHOW_RESOLVED = getattr(settings, 'HELPDESK_DASHBOARD_SHOW_RESOLVED', False)
 
 
 ''' options for footer '''
